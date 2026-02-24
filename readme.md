@@ -25,10 +25,18 @@ O **Lua/desk** é um sistema de gerenciamento de tickets (chamados) de código a
     cd luadesk
     ```
 
-2. **Instalação e setup automático:**
+2. **Como rodar localmente:**
 
     ```bash
-    npm run start
+    npm run build
+    ```
+
+    ```bash
+    npm run dev
+    ```
+
+    ```bash
+    php artisan serve
     ```
 
 3. **Acesse o sistema:**
