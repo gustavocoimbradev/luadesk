@@ -9,7 +9,6 @@ class StoreUserRequest extends FormRequest
  
     public function authorize(): bool
     {
-        // TODO: Implement restrictions
         return true;
     }
 

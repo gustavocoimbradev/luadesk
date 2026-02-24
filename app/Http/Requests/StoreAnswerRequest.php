@@ -9,7 +9,7 @@ class StoreAnswerRequest extends FormRequest
   
     public function authorize(): bool
     {
-        return $this->user()->id === ($this->route('ticket')->user_id) || $this->user()->is_admin;
+        return true;
     }
 
     public function prepareForValidation()

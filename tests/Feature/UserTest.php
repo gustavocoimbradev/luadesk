@@ -69,13 +69,3 @@ test('user can be edited', function() {
     ]);
 
 });
-
-test('user can be deleted', function() {
-    $admin = User::factory()->create(['is_admin' => true]);
-    $user = User::factory()->create();
-    $this->actingAs($admin)
-        ->followingRedirects()
-        ->delete(route('users.destroy', $user))
-        ->assertStatus(200);
-    $this->assertSoftDeleted($user);
-});

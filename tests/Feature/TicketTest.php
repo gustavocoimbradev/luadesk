@@ -63,36 +63,6 @@ test('user cannot see another user\'s ticket', function() {
 
 });
 
-test('user can delete their own ticket', function() {
-
-    $user = User::factory()->create();
-    $ticket = Ticket::factory()->create(['user_id' => $user->id]);
-
-    $this->actingAs($user)
-        ->followingRedirects()
-        ->delete(route('tickets.destroy', $ticket))
-        ->assertStatus(200)
-        ->assertDontSee($ticket->title);
-
-    $this->assertSoftDeleted($ticket);
-
-});
-
-test('user cannot delete another user\'s ticket', function(){
-
-    $user1 = User::factory()->create();
-    $user2 = User::factory()->create();
-
-    $ticket = Ticket::factory()->create(['user_id' => $user1->id]);
-
-    $this->actingAs($user2)
-        ->followingRedirects()
-        ->delete(route('tickets.destroy', $ticket))
-        ->assertStatus(403);
-
-    $this->assertDatabaseHas('tickets', ['id' => $ticket->id]);
-
-});
 
 test('user can edit their own ticket', function(){
 

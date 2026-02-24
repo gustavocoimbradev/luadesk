@@ -9,7 +9,7 @@ class UpdateTicketRequest extends FormRequest
   
     public function authorize(): bool
     {
-        return $this->user()->id === ($this->route('ticket'))->user_id;
+        return true;
     }
 
     public function rules(): array

@@ -8,7 +8,6 @@ Route::controller(UserController::class)->middleware(['auth', 'admin'])->group(f
     Route::get('/users', 'index')->name('users.index');
     Route::get('/users/create', 'create')->name('users.create');
     Route::post('/users', 'store')->name('users.store');
-    Route::delete('/users/{user}', 'destroy')->name('users.destroy');
 });
 
 Route::controller(UserController::class)->middleware('auth')->group(function(){
@@ -30,7 +29,6 @@ Route::controller(TicketController::class)->middleware('auth')->group(function()
     Route::get('/tickets/create', 'create')->name('tickets.create');
     Route::get('/tickets/{ticket}', 'show')->name('tickets.show');
     Route::post('/tickets', 'store')->name('tickets.store');
-    Route::delete('/tickets/{ticket}', 'destroy')->name('tickets.destroy');
     Route::put('/tickets/{ticket}', 'update')->name('tickets.update');
 });
 
