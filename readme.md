@@ -28,15 +28,13 @@ O **Lua/desk** é um sistema de gerenciamento de tickets (chamados) de código a
 2. **Como rodar localmente:**
 
     ```bash
-    npm run build
+    # Setup inicial
+    composer run setup
     ```
 
     ```bash
-    npm run dev
-    ```
-
-    ```bash
-    php artisan serve
+    # Rodar servdor
+    composer run dev
     ```
 
 3. **Acesse o sistema:**
