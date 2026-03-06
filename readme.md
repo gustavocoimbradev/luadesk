@@ -32,6 +32,11 @@ O **Lua/desk** é um sistema de gerenciamento de tickets (chamados) de código a
     composer run setup
     ```
 
+   ```bash
+    # Criar usuários de exemplo
+    php artisan db:seed
+    ```
+
     ```bash
     # Rodar servdor
     composer run dev
