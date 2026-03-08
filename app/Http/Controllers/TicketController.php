@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Tickets\{CreateTicketAction, DeleteTicketAction, UpdateTicketAction};
 use App\Http\Requests\{StoreTicketRequest, UpdateTicketRequest};
 use Inertia\Inertia;
 use App\Models\Ticket;
-use App\Services\TicketService;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Gate; 
 
 class TicketController extends Controller
 {
 
-    public function __construct(protected TicketService $service) { }
-     
     public function index() { 
         Gate::authorize('viewAny', Ticket::class);
         return Inertia::render('Tickets/Index', [
@@ -34,22 +32,22 @@ class TicketController extends Controller
         return Inertia::render('Tickets/Create');
     }
     
-    public function store(StoreTicketRequest $request) {
+    public function store(StoreTicketRequest $request, CreateTicketAction $action) {
         Gate::authorize('create', Ticket::class);
-        if ($this->service->createTicket($request->validated())) {
+        if ($action($request->validated())) {
             return to_route('tickets.index')->with('success', 'Ticket created successfully!');
         }
         return redirect()->back()->withError('Failed to create ticket.');
     }
-
-    public function update(UpdateTicketRequest $request, Ticket $ticket) {
+ 
+    public function update(UpdateTicketRequest $request, Ticket $ticket, UpdateTicketAction $action) {
         Gate::authorize('update', $ticket);
-        $this->service->updateTicket($ticket, $request->validated());
+        $action($ticket, $request->validated());
     }
 
-    public function destroy(Ticket $ticket) {
+    public function destroy(Ticket $ticket, DeleteTicketAction $action) {
         Gate::authorize('delete', $ticket);
-        $this->service->deleteTicket($ticket);
+        $action($ticket);
     }
 
 }

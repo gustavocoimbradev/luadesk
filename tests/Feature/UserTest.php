@@ -54,7 +54,7 @@ test('user can be edited', function() {
     $payload = [
         'name'      => 'New Name',
         'email'     => fake()->unique()->safeEmail(),
-        'password'  => fake()->password()
+        'password'  => ''
     ];
 
     $this->actingAs($admin)

@@ -30,12 +30,20 @@ class User extends Authenticatable
         ];
     }
 
+    // Relationships
+
     public function tickets() {
         return $this->hasMany(Ticket::class);
     }
 
     public function answers() {
         return $this->hasMany(Answer::class);
+    }
+
+    // Scopes
+
+    public function scopeLatestFirst($query) {
+        return $query->orderBy('id', 'desc');
     }
 
 }
