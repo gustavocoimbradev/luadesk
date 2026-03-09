@@ -2,12 +2,16 @@
 
 namespace App\Actions\Tickets;
 
+use App\Dto\Tickets\UpdateTicketDto;
 use App\Models\Ticket;
 
 class UpdateTicketAction {
 
-    public function __invoke(Ticket $ticket, array $payload): void {
-        $ticket->update($payload);
+    public function __invoke(Ticket $ticket, UpdateTicketDto $payload): void {
+        $ticket->update([
+            'title' => $payload->title,
+            'content' => $payload->content
+        ]);
     }
 
 }

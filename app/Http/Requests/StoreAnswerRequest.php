@@ -9,14 +9,7 @@ class StoreAnswerRequest extends FormRequest
   
     public function authorize(): bool
     {
-        return true;
-    }
-
-    public function prepareForValidation()
-    {
-       $this->merge([
-        'closes_ticket' => $this->closes_ticket ?? false
-       ]);
+        return true; 
     }
 
     public function rules(): array
