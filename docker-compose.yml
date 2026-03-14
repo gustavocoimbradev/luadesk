@@ -1,5 +1,5 @@
 services:
-  application:
+  luadesk:
     build:
       context: .
       dockerfile: dockerfiles/php/Dockerfile
