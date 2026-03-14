@@ -3,8 +3,9 @@ services:
     build:
       context: .
       dockerfile: dockerfiles/php/Dockerfile
-    image: application
-    container_name: application
+    image: luadesk
+    container_name: luadesk
+    user: "root"
     tty: true
     ports:
       - "9000:9000"
