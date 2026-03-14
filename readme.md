@@ -36,22 +36,8 @@ O **Lua/desk** é um sistema de gerenciamento de tickets (chamados) de código a
     Sem docker (requer PHP 8.3, Composer, Node, Mysql)
 
     ```bash
-    composer run setup
-<<<<<<< HEAD
-    ```
-
-    ```bash
-    # Rodar servdor
-=======
-    php artisan db:seed
->>>>>>> c7dd609e13cefc94ca255ded8b65b310eeee22ec
-    composer run dev
-    ```
-
-3. **Acesse o sistema:**
-   Após a conclusão do script, o servidor provavelmente estará rodando em:
-    ```bash
-    http://localhost:8000
+      composer run setup
+      composer run dev
     ```
 
 ---
