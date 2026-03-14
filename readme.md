@@ -28,7 +28,7 @@ O **Lua/desk** é um sistema de gerenciamento de tickets (chamados) de código a
 2. **Como rodar localmente:**
 
     ```bash
-    docker compose build -d --build
+    docker compose up -d --build
     ```
 
 ---
