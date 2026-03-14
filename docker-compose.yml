@@ -7,8 +7,6 @@ services:
     container_name: luadesk-app
     user: "root"
     tty: true
-    ports:
-      - "9000:9000"
     volumes:
       - .:/var/www
     networks:
