@@ -12,23 +12,26 @@ O **Lua/desk** é um sistema de gerenciamento de tickets (chamados) de código a
 
 ### 📋 Pré-requisitos
 
-- **PHP 8.2+**
-- **Composer**
-- **Node.js & NPM**
+- **Docker**
 
 ### 🛠️ Passo a passo
 
 1. **Clone o repositório:**
 
     ```bash
-    git clone https://github.com/gustavocoimbradev/luadesk.git
-    cd luadesk
+    git clone https://github.com/gustavocoimbradev/amora.git
+    cd amora
     ```
 
-2. **Como rodar localmente:**
+2. **Como rodar:**
 
     ```bash
-    docker compose up -d --build
+    docker compose up -d
+    ```
+
+3. **Acesse o sistema:**
+    ```bash
+    http://localhost:8000
     ```
 
 ---
@@ -54,8 +57,7 @@ A senha para todas as contas pré-configuradas é: `password`.
 ## 🛠️ Tecnologias utilizadas
 
 - **Backend:** [Laravel 12](https://laravel.com)
-- **Frontend:** [Vue.js 3](https://vuejs.org) (Composition API)
-- **Ponte de Dados:** [Inertia.js](https://inertiajs.com) (Experiência SPA)
+- **Frontend:** [Vue.js 3](https://vuejs.org) / [Inertia.js](https://inertiajs.com)
 - **Estilização:** [Tailwind CSS](https://tailwindcss.com)
 - **Infraestrutura:** [Docker](https://www.docker.com) & [Docker Compose](https://docs.docker.com/compose/)
 
