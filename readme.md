@@ -57,6 +57,7 @@ A senha para todas as contas pré-configuradas é: `password`.
 - **Frontend:** [Vue.js 3](https://vuejs.org) (Composition API)
 - **Ponte de Dados:** [Inertia.js](https://inertiajs.com) (Experiência SPA)
 - **Estilização:** [Tailwind CSS](https://tailwindcss.com)
+- **Infraestrutura:** [Docker](https://www.docker.com) & [Docker Compose](https://docs.docker.com/compose/)
 
 ---
 
